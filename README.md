@@ -1,6 +1,6 @@
 # Frame-wise Piano Note Classification with Deep Learning
 
-This project explores **Automatic Music Transcription (AMT)** by classifying active piano notes (MIDI 21–108) in polyphonic recordings. The task is framed as a **frame-wise multi-label classification** problem using the [MusicNet dataset](https://zenodo.org/record/5120004).
+This project explores **Automatic Music Transcription (AMT)** by classifying active piano notes (MIDI 21–108) in polyphonic recordings. The task is framed as a **frame-wise multi-label classification** problem using the [MusicNet dataset](https://www.kaggle.com/datasets/imsparsh/musicnet-dataset).
 
 Three models were implemented from scratch in PyTorch:
 
@@ -8,7 +8,8 @@ Three models were implemented from scratch in PyTorch:
 - **Bidirectional GRU** on CQT and Wav2Vec2 embeddings  
 - **Transformer Encoder** on CQT and Wav2Vec2 embeddings  
 
-Full details are provided in the [Project Report](Project_report.pdf).
+Further details and results are provided in the [Project Report](Project_report.pdf) and the interactive [README Notebook](0_README.ipynb).
+
 
 ---
 
@@ -66,7 +67,7 @@ Full details are provided in the [Project Report](Project_report.pdf).
 
 ## Dataset
 
-Download [MusicNet](https://zenodo.org/record/5120004) and place `.wav` audio files and `.csv` annotation files under `data/`.
+Download [MusicNet](https://www.kaggle.com/datasets/imsparsh/musicnet-dataset)
 
 Preprocessing extracts:
 - CQT representations  
@@ -84,7 +85,6 @@ python train.py --model gru          # GRU on CQT or Wav2Vec2
 python train.py --model transformer  # Transformer on CQT or Wav2Vec2
 
 ```
-Got it — here’s the whole thing in proper Markdown format, ready to paste directly into any README.md or Markdown environment:
 
 ## Evaluate
 
@@ -104,10 +104,10 @@ Future Work
 
 References
 
-- Hawthorne et al. Onsets and Frames: Dual-Objective Piano Transcription. ISMIR, 2018.
-- Jamshidi et al. Recent Advances in Automatic Music Transcription. IEEE SPM, 2024.
-- Ou et al. Exploring Transformer’s Potential on Automatic Piano Transcription. arXiv, 2022.
-- Baevski et al. wav2vec 2.0: A framework for self-supervised learning of speech representations. NeurIPS, 2020.
-- Brown, J. C. Calculation of a Constant Q Spectral Transform. JASA, 1991.
+- Hawthorne et al. *Onsets and Frames: Dual-Objective Piano Transcription.* ISMIR, 2018.
+- Jamshidi et al. *Recent Advances in Automatic Music Transcription.* IEEE SPM, 2024.
+- Ou et al. *Exploring Transformer’s Potential on Automatic Piano Transcription.* arXiv, 2022.
+- Baevski et al. *wav2vec 2.0: A framework for self-supervised learning of speech representations.* NeurIPS, 2020.
+- Brown, J. C. *Calculation of a Constant Q Spectral Transform.* JASA, 1991.
 
 
