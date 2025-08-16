@@ -1,0 +1,6 @@
+{
+  "threshold": 0.25,
+  "active_f1": 0.2862184078388664,
+  "active_precision": 0.2951906891386075,
+  "active_recall": 0.3128945635505061
+}

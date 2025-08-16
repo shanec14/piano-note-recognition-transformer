@@ -1,0 +1,86 @@
+# This is a YAML configuration file for a machine learning model training setup.
+# It defines various hyperparameters and model architecture for different models (Transformer, GRU, CNN).
+default: &DEFAULT
+  num_epochs: 500
+  batch_size: 128
+
+Transformer_CQT:
+  <<: *DEFAULT
+  model_name: transformer
+  input_type: cqt
+  input_dim: 88
+  lr: 0.0005
+  dropout: 0.3
+  model_dim: 256
+  num_heads: 4
+  num_layers: 3
+  pos_weight: null
+  gpu_vis_dev: "0"
+  use_fraction: 1.0
+  early_stopping: True   
+  min_f1_threshold: 0.2     
+  min_f1_epochs: 500
+
+Transformer_Wav2Vec:
+  <<: *DEFAULT
+  model_name: transformer
+  input_type: wav2vec
+  input_dim: 768
+  lr: 0.0005
+  dropout: 0.3
+  model_dim: 256
+  num_heads: 4
+  num_layers: 3
+  pos_weight: null
+  gpu_vis_dev: "0"
+  use_fraction: 1.0
+  early_stopping: True  
+  min_f1_threshold: 0.2     
+  min_f1_epochs: 500
+
+GRU_CQT:
+  <<: *DEFAULT
+  model_name: gru
+  input_type: cqt
+  input_dim: 88
+  lr: 0.0005
+  dropout: 0.3
+  model_dim: 256
+  num_layers: 3
+  pos_weight: null
+  gpu_vis_dev: "0"
+  use_fraction: 1.0
+  early_stopping: True  
+  min_f1_threshold: 0.2     
+  min_f1_epochs: 500
+
+GRU_Wav2Vec:
+  <<: *DEFAULT
+  model_name: gru
+  input_type: wav2vec
+  input_dim: 768
+  lr: 0.0005
+  dropout: 0.3
+  model_dim: 256
+  num_layers: 3
+  pos_weight: null
+  gpu_vis_dev: "0"
+  use_fraction: 1.0
+  early_stopping: True  
+  min_f1_threshold: 0.2     
+  min_f1_epochs: 500   
+
+CNN:
+  <<: *DEFAULT
+  model_name: cnn
+  input_type: mel
+  lr: 0.0001
+  gpu_vis_dev: '0'
+  num_epochs: 500
+  batch_size: 128
+  early_stopping: True
+  patience: 15
+  use_fraction: 1
+  min_f1_threshold: 0.3     
+  min_f1_epochs: 100
+  
